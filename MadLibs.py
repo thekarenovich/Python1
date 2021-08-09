@@ -7,7 +7,7 @@ up = '__(2)__'
 minute = '__(3)__'
 only = '__(4)__'
 see = '__(5)__'
-k = 5 # количество слов 
+k = 5 # number of words
 text = '''I {} the letter. Stood {}. Sat down. Pondered for a {}. Then reread the letter again.
 It is {} with the heart that one can {} rightly.'''.format(read, up, minute, only, see)
 
