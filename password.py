@@ -44,7 +44,7 @@ if(digits == 'yes'):
     
     
     
-number_of_symbols_2 = number_of_symbols    
+number_of_symbols_2 = number_of_symbols 
 
 while(number_of_symbols > 0):
     step1 = random.choice(everything)
@@ -53,13 +53,14 @@ while(number_of_symbols > 0):
     number_of_symbols-=1
 
 
-listt = [] #list for 
+listt = [] #list for checking presence of type of symbol in the password
 l = False
 u = False
 d = False
 s = False
 
-
+#if variable is list, not string('yes' or 'no') and if there is defined symbol in ther password it's True
+#if there isn't symbol in pass - False
 for i in lowercase_letters:
     if(i in password):
         l = True
@@ -79,7 +80,8 @@ if(isinstance(special_symbols, list)==True):
         if(i in password):
             s = True
     listt.append(s)
-    
+
+#if at least a variable is False and it's list      
 if(all(i==True for i in listt) == False):
     listttt = []
     listttt = [i for i in range(number_of_symbols_2-3)]
