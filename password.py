@@ -19,7 +19,6 @@ while(number_of_symbols < 6 or number_of_symbols > 40):
     elif(number_of_symbols > 40):
         number_of_symbols = int(input("Number of symbols have to contain not more than 40 symbols. Try again: "))
         
-
 uppercase_letters = input('Do you want to have uppercase letters in your pass? ')
 uppercase_letters = uppercase_letters.lower()
 if(uppercase_letters == 'yes'):
@@ -27,7 +26,6 @@ if(uppercase_letters == 'yes'):
     for i in range(65, 91):
         uppercase_letters.append(chr(i))
         everything.append(uppercase_letters)
-
 
 special_symbols = input('Do you want to have special symbols in your pass? ')
 special_symbols = special_symbols.lower()
@@ -40,9 +38,6 @@ digits = digits.lower()
 if(digits == 'yes'):
     digits = [i for i in range(11)]
     everything.append(digits)
-    
-    
-    
     
 number_of_symbols_2 = number_of_symbols 
 
