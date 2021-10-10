@@ -1,84 +1,10 @@
 print("Первый пользователь вводит слово")
 print("Второй пользователь угадывает слово")
 word = input()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
+
+for i in range(78):
+    print()
+    
 wordd = ''
 
 l = ['б', 'п', 'в', 'ф', 'д', 'т', 'з', 'с', 'ж', 'ш', 'ч', 'ц', 'щ', 'г', 'к', 'х', 'м', 'н', 'л', 'р', 'а', 'э', 'о', 'ы', 'и', 'у', 'я', 'е', 'ё', 'ю', 'й']
@@ -140,20 +66,4 @@ while(k>0):
 
 if(k==0):
     print("GAME OVER!!!")
-
-    
-    
-        
-        
-
-        
-        
-        
-    
-
-
-
-    
-
-
         
