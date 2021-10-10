@@ -15,25 +15,8 @@ k=5 # количество попыток
 
 print("Время угадывать!")
 print("Имеется 5 попыток")
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-print()
-
+for i in range(10):
+    print()
 
 while(k>0):
 
