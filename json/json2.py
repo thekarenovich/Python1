@@ -3,6 +3,7 @@
 import json
 blog = {'URL': 'datacamp.com', 'name': 'Datacamp'} # Cловарь 
 to_json= json.dumps(blog) # Метод
+print(to_json)
 
 '''
 Python	JSON
