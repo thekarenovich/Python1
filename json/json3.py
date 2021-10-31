@@ -1,5 +1,7 @@
 # Запись в файл JSON
 
+import json 
+
 my_json_string = """{
    "article": [
       {
