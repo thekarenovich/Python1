@@ -1,55 +1,70 @@
 # в терминале linux вводим pip3 install pygame для того, чтобы могли работать с pygame
-
-from tkinter import *
+import tkinter as tk
 from tkinter import filedialog
 from pygame import mixer
 
-root = Tk()
 
-class MusicPlayer:
+def load():
+    global music_file
+    music_file = filedialog.askopenfilename()
+    Chosen = tk.Label(window, text="Music is chosen", fg='black', font=('Calibri', 10, 'bold'))
+    Chosen.place(x=75, y=10)
 
-    def load(self):
-        self.music_file = filedialog.askopenfilename()
-        # выбираем муз. файл для прослушивания
+    # выбираем муз. файл для прослушивания
 
-    def play(self):
-        if self.music_file:
-            mixer.init()
-            mixer.music.load(self.music_file)
-            mixer.music.play()
-        # запуск мелодии
 
-    def pause(self):
-        if self.playing_state == False:
-            mixer.music.pause()
-            self.playing_state=True
-        else:
-            mixer.music.unpause()
-            self.playing_state = False
-        # пауза и запуск мелодии
+def play():
+    if music_file:
+        #global status
+        #status = value
+        mixer.init()
+        mixer.music.load(music_file)
+        mixer.music.play()
+        Play.destroy()
+        Pause = tk.Button(window, text='Pause', width=12, font=('Times', 23, 'bold'), command=pause)
+        Pause.place(x=45, y=35)
+    # запуск мелодии
 
-    def stop(self):
-        mixer.music.stop()
-        root.destroy()
-        # убирание мелодии
-        # закрытие окна
+def pause():
+    global playing_state
+    if playing_state == False:
+        Pause = tk.Button(window, text='Play', width=12, font=('Times', 23, 'bold'), command=pause)
+        Pause.place(x=45, y=35)
+        mixer.init()
+        mixer.music.pause()
+        playing_state = True
+    else:
+        Pause = tk.Button(window, text='Pause', width=12, font=('Times', 23, 'bold'), command=pause)
+        Pause.place(x=45, y=35)
+        mixer.init()
+        mixer.music.unpause()
+        playing_state = False
+    # пауза и запуск мелодии
 
-    def __init__(self, window):
-        window.title('  Music Player')
-        window.geometry('235x100')
-        window.resizable(False,False)
 
-        Load = Button(window, text = 'Choose',  width = 10, font = ('Times', 10, 'bold'), command = self.load)
-        Load.place(x=10, y=10)
-        Play = Button(window, text = 'Play',  width = 10,font = ('Times', 17, 'bold'), command = self.play)
-        Play.place(x=20, y=40)
-        Pause = Button(window, text = 'Pause',  width = 10, font = ('Times', 17, 'bold'), command = self.pause)
-        Pause.place(x=130,y=40)
-        Stop = Button(window, text = 'Quiet',  width = 7, font = ('Times', 8, 'bold'), command = self.stop)
-        Stop.place(x=107,y=75)
+def stop():
+    mixer.music.stop()
+    window.destroy()
+    # убирание мелодии
+    # закрытие окна
 
-        self.music_file = False
-        self.playing_state = False
 
-app = MusicPlayer(root)
-root.mainloop()
+window = tk.Tk()
+window.title('   Music Player')
+window.geometry('235x100')
+window.resizable(False,False)
+
+music_file = False
+playing_state = False
+status = False
+
+Load = tk.Button(window, text = 'Choose',  width = 10, font = ('Times', 10, 'bold'), command = load)
+Load.place(x=10, y=10)
+Play = tk.Button(window, text = 'Play',  width = 12,font = ('Times', 23, 'bold'), command =play )
+Play.place(x=45, y=35)
+'''Pause = tk.Button(window, text = 'Pause',  width = 10, font = ('Times', 17, 'bold'), command = )
+Pause.place(x=130,y=40)'''
+Stop = tk.Button(window, text = 'Quiet',  width = 7, font = ('Times', 8, 'bold'), command = stop)
+Stop.place(x=107,y=75)
+
+window.mainloop()
