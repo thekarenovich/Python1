@@ -68,6 +68,5 @@ Stop = tk.Button(window, text = 'Quiet',  width = 7, font = ('Times', 8, 'bold')
 Stop.place(x=107,y=75)
 
 
-#app = MusicPlayer(root)
 window.mainloop()
 
