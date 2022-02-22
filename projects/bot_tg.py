@@ -94,7 +94,7 @@ async def load_description(message: types.Message, state: FSMContext):
 @dp.message_handler(commands=["show_pics"])
 async def show_pics(message: types.Message):
     await sql_show_pics(message)
-    await message.answer("))", kb_start)
+    await message.answer("))", reply_markup=kb_start)
 
 @dp.callback_query_handler(lambda x: x.data and x.data.startswith("del "))
 async def del_callback_run(callback_query: types.CallbackQuery):
