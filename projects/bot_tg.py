@@ -6,7 +6,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, InlineKeyboardButton, InlineKeyboardMarkup
 
-bot = Bot(token='5155307458:AAGRg3aAy-X0uxqr8ZtRtrsLZDx3lNzrPQQ')
+bot = Bot(token='token of bot')
 dp = Dispatcher(bot, storage=MemoryStorage())
 logging.basicConfig(level=logging.INFO)
 
@@ -140,7 +140,4 @@ async def on_startup(_):
     sql_start_pics()
 
 if __name__ == "__main__":
-	executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
-
-
-                               
+	executor.start_polling(dp, skip_updates=True, on_startup=on_startup)  
