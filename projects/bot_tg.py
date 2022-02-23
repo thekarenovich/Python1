@@ -6,7 +6,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, InlineKeyboardButton, InlineKeyboardMarkup
 
-bot = Bot(token='5155307458:AAGRg3aAy-X0uxqr8ZtRtrsLZDx3lNzrPQQ')
+bot = Bot(token='token of bot')
 dp = Dispatcher(bot, storage=MemoryStorage())
 logging.basicConfig(level=logging.INFO)
 
@@ -80,15 +80,6 @@ async def sql_delete_pic(data):
     cur.execute('DELETE FROM pics WHERE description == ?', (data,))
     base.commit()
 
-@dp.message_handler(commands=['back'])
-async def back(message: types.Message):
-    await message.answer("⬅️Back", reply_markup=kb_start)
-
-@dp.message_handler(commands=['add_pic'], state=None)
-async def add_pic(message: types.Message):
-    await FSMAdmin.photo.set() #Переключение с обычного в машинное состояние 
-    await message.answer("Upload photo", reply_markup=kb_cancel)
-
 @dp.message_handler(state="*", commands=['cancel'])
 @dp.message_handler(Text(equals="cancel", ignore_case=True), state="*")
 async def cancel_handler(message: types.Message, state: FSMContext):
@@ -132,6 +123,15 @@ async def delete_pic(message: types.Message):
         await bot.send_photo(message.from_user.id, ret[0])
         await bot.send_message(message.from_user.id, f"{ret[1]}", reply_markup=InlineKeyboardMarkup().\
                                add(InlineKeyboardButton("Delete", callback_data=f'del {ret[1]}')))
+        
+@dp.message_handler(commands=['add_pic'], state=None)
+async def add_pic(message: types.Message):
+    await FSMAdmin.photo.set() #Переключение с обычного в машинное состояние 
+    await message.answer("Upload photo", reply_markup=kb_cancel)
+
+@dp.message_handler(commands=['back'])
+async def back(message: types.Message):
+    await message.answer("⬅️Back", reply_markup=kb_start)
 
 async def on_startup(_):
     print("Bot is online")
