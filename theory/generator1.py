@@ -1,9 +1,9 @@
-def fibonacci(string):
+def str_up(string):
     for i in string:
         yield i.upper()
         
 string = 'hello world'
-i = fibonacci(string)
+i = str_up(string)
 while True:
     try:
         print(next(i))
