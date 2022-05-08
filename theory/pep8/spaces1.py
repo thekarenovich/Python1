@@ -47,3 +47,5 @@ result = some_function_that_takes_arguments(
     'a', 'b', 'c',
     'd', 'e', 'f',
 )
+
+# Данный скрипт запускать не надо!
