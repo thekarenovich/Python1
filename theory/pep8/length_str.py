@@ -27,5 +27,3 @@ with open('/path/to/some/file/you/want/to/read') as file_1, \
 
 
 # Данный скрипт запускать не надо!
-
-
