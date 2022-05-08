@@ -127,3 +127,5 @@ do_one(); do_two(); do_three(long, argument,
                              list, like, this)
 
 if foo == 'blah': one(); two(); three()
+
+# Данный скрипт запускать не надо!
