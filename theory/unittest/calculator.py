@@ -11,7 +11,7 @@ def calculator(expression):
                     '+': lambda a, b: a + b, 
                     '-': lambda a, b: a - b, 
                     '*': lambda a, b: a * b,
-                    '/': lambda a, b: a / b,
+                    '/': lambda a, b: a / b, 
                 }[sign](left, right)
             except (ValueError, TypeError):
                 raise ValueError('Выражение должно содержать 2 целых числа и 1 знак')
