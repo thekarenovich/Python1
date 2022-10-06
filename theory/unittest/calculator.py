@@ -10,7 +10,7 @@ def calculator(expression):
                 return { 
                     '+': lambda a, b: a + b, 
                     '-': lambda a, b: a - b, 
-                    '*': lambda a, b: a * b,
+                    '*': lambda a, b: a * b, 
                     '/': lambda a, b: a / b, 
                 }[sign](left, right)
             except (ValueError, TypeError): 
