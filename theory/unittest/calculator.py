@@ -6,7 +6,7 @@ def calculator(expression):
         if sign in expression:
             try:
                 left, right = expression.split(sign)
-                left, right = int(left), int(right) 
+                left, right = int(left), int(right)  
                 return { 
                     '+': lambda a, b: a + b, 
                     '-': lambda a, b: a - b, 
