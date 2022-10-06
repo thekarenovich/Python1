@@ -7,7 +7,7 @@ def calculator(expression):
             try:
                 left, right = expression.split(sign)
                 left, right = int(left), int(right) 
-                return {
+                return { 
                     '+': lambda a, b: a + b, 
                     '-': lambda a, b: a - b, 
                     '*': lambda a, b: a * b,
