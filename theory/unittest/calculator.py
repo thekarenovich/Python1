@@ -5,7 +5,7 @@ def calculator(expression):
     for sign in allowed:
         if sign in expression:
             try:
-                left, right = expression.split(sign)
+                left, right = expression.split(sign) 
                 left, right = int(left), int(right)  
                 return { 
                     '+': lambda a, b: a + b, 
