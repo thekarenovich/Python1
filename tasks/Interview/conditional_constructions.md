@@ -33,9 +33,9 @@ def category_to_show(gender):
         category = 'site.com/female'
     return category
 
-
 print(category_to_show('М'))  # site.com/male
 print(category_to_show('Ж'))  # site.com/female
+
 
 # Тернарный оператор
 def category_to_show(gender):
