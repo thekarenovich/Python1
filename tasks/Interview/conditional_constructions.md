@@ -37,12 +37,10 @@ def category_to_show(gender):
 print(category_to_show('М'))  # site.com/male
 print(category_to_show('Ж'))  # site.com/female
 
-
 # Тернарный оператор
 def category_to_show(gender):
     category = 'site.com/male' if gender == 'М' else 'site.com/female'
     return category
-    
     
 print(category_to_show('М'))  # site.com/male
 print(category_to_show('Ж'))  # site.com/female
