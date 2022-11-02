@@ -6,7 +6,7 @@ class Topics:
             return "Университет"
         elif a == 3:
             return "Кубик Рубика"
-
+ 
 
 class Uni:
     def uni_method(self, g1, g2, g3, g4):
